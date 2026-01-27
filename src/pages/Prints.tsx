@@ -29,10 +29,11 @@ const collagePics = [
 
 export default function Prints() {
   return (
-    <div className="container card shadow p-5 mb-md-3 mt-md-3">
-      <h1 className="title text-warning">Prints</h1>
-      <hr />
-      <h3>Hard to beat prices for every printing occasion. Click on the photos to see more!</h3>
+    <div className="container p-5 mb-md-3 mt-md-3">
+      <h1 className="title yellow-dark">Prints</h1>
+      <h3 className="mb-4">
+        Hard to beat prices for every printing occasion. Click on the photos to see more!
+      </h3>
       <ul className={styles.listOfPrints}>
         <li>
           <b>Parties: </b> Hen & Stag parties, seasonal printing, funny and special occasion prints

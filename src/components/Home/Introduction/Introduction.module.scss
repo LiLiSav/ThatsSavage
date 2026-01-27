@@ -4,15 +4,12 @@
 
 .introCardsContainer {
   width: 100%;
-  align-items: center;
-  align-content: center;
   display: flex;
   justify-content: space-evenly;
-  flex-flow: row wrap;
-  text-decoration: none;
+  flex-wrap: wrap;
+  gap: 20px;
   list-style-type: none;
-  margin-top: -50px;
-  margin-bottom: 0;
+  margin: -50px 0 0;
   padding: 0;
 }
 
@@ -20,37 +17,24 @@
   min-height: 210px;
   width: 25vw;
   padding: 20px;
+  border-radius: 10px;
   background-color: white;
   color: black;
-}
-
-@media screen and (max-width: 960px) {
-  .introCardsContainer {
-    width: 100%;
-    height: auto;
-    align-items: center;
-    align-content: center;
-    justify-content: space-evenly;
-    text-decoration: none;
-    list-style-type: none;
-    margin-top: 0;
-    padding: 0px !important;
-    text-align: justify;
-  }
-
-  .itemContainer {
-    height: auto;
-    width: 80vw;
-    min-height: 150px;
-    &:last-child {
-      padding-bottom: 0;
-    }
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  > h4 {
+    font-weight: bold;
   }
 }
 
 @media screen and (max-width: 992px) {
+  .introCardsContainer {
+    padding: 0 20px;
+    gap: 15px;
+  }
+
   .itemContainer {
-    width: 95%;
+    width: 100%;
+    min-height: 150px;
   }
 }
 
@@ -59,37 +43,43 @@
 // ==============
 
 .fullPageContainer {
-  margin: 0;
   min-height: 50vh;
   background-color: #343a40;
   color: #ffdd17;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .introContainer {
-  padding: 1rem 0 6rem 0;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: flex-end;
-  flex-wrap: wrap;
-}
-
-.introHeading {
-  padding: 0 10px;
+  padding: 2rem;
   text-align: center;
 }
 
+.introHeading {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-weight: bold;
+  margin: 0;
+  font-size: 2rem;
+}
+
 .introPicText {
-  width: 300px;
-  vertical-align: bottom;
+  margin-bottom: -0.5rem;
+  height: 2.2rem;
+  vertical-align: middle;
+  display: inline-block;
 }
 
 @media screen and (max-width: 960px) {
-  .introContainer {
-    width: 100%;
-    padding: 20px 0;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  .introHeading {
+    font-size: 1.4rem;
+  }
+
+  .introPicText {
+    max-width: 200px;
   }
 }

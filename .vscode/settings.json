@@ -5,7 +5,7 @@
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.printWidth": 100,
@@ -14,13 +14,7 @@
   "eslint.options": {
     "extensions": [".js", ".jsx", ".md", ".mdx", ".ts", ".tsx"]
   },
-  "eslint.validate": [
-    "markdown",
-    "mdx",
-    "javascript",
-    "typescript",
-    "typescriptreact"
-  ],
+  "eslint.validate": ["markdown", "mdx", "javascript", "typescript", "typescriptreact"],
   "files.eol": "\r\n",
   "files.associations": {
     "*.mdx": "markdown"

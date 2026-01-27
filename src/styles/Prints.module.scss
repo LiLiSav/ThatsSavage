@@ -6,11 +6,6 @@
 
 .listOfPrints {
   list-style: none;
-  li::before {
-    content: "✅";
-    display: inline-block;
-    margin-right: 0.2rem;
-  }
 }
 
 @media screen and (max-width: 768px) {

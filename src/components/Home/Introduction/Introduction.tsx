@@ -6,19 +6,11 @@ export const Introduction = () => {
     <div>
       <div className={styles.fullPageContainer}>
         <div className={styles.introContainer}>
-          <div className={styles.introHeading}>
-            <h3>
-              <b>For all your design needs, </b>
-            </h3>
-          </div>
-          <div>
-            <img src="/Logo.png" alt="Thatssavage" className={styles.introPicText} />
-          </div>
-          <div className={styles.introHeading}>
-            <h3>
-              <b> has got you covered!</b>
-            </h3>
-          </div>
+          <h3 className={styles.introHeading}>
+            For all your design needs,{" "}
+            <img src="/Name.png" alt="Thatssavage" className={styles.introPicText} /> has got you
+            covered!
+          </h3>
         </div>
       </div>
       <div className="page-container">

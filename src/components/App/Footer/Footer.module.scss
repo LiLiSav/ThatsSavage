@@ -1,101 +1,79 @@
 .footerContainer {
-  padding-top: 4vh;
+  padding-top: 2rem;
   background: #343a40;
-  height: auto;
-  flex-direction: row;
-  justify-content: center;
 }
 
-.footerItems {
+.footerContent {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  text-align: center;
+  flex-direction: column;
+  max-width: 1200px;
+  gap: 2rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 }
 
 .footerHeader {
   color: #ffdd17;
-  margin-top: 5px;
-  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
-.footerText {
+.items {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contactItem {
   color: white;
-}
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
 
-.footerRow {
-  margin: 0px 0px;
-}
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 
-@media screen and (max-width: 768px) {
-  .footerRow {
-    width: 50%;
+  &:hover {
+    text-decoration: underline;
   }
 }
 
-@media screen and (max-width: 560px) {
-  .footerRow {
-    width: 100%;
+.socialItem {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
-.footerSpacing {
-  padding: 0.5rem 1rem;
-  margin-bottom: 4vh;
-  a:hover {
-    opacity: 0.5;
-  }
-}
-
-.footerFooter {
-  margin: 0 10vh;
-  border-color: darkslategray;
+.footerBottom {
+  margin: 1rem 2rem 0;
+  padding: 1rem 0;
   color: #a7a9ac;
-  border-top: solid 1px;
-  height: auto;
   text-align: right;
-  padding-bottom: 5px;
 }
 
-.linkText {
+.creditLink {
   color: inherit;
+
   &:hover {
     color: hotpink;
   }
-}
-
-.btn {
-  color: white;
-  border: none;
-  height: 2.5rem;
-  width: 2.5rem;
-  margin: 3px;
-  border-radius: 50%;
-  &:hover {
-    opacity: 0.5;
-  }
-}
-
-.btnFacebook {
-  @extend .btn;
-  background-color: #3b5998;
-}
-
-.btnInsta {
-  @extend .btn;
-  background-color: #d6249f;
-  background: radial-gradient(
-    circle at 30% 107%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  );
-}
-
-.btnLinkedIn {
-  @extend .btn;
-  background-color: #0976b4;
 }

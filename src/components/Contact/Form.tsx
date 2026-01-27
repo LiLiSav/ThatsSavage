@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { Resolver, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -9,7 +9,6 @@ import styles from "./Form.module.scss";
 
 const defaultValues: FormValueTypes = {
   name: "",
-  phone: "",
   email: "",
   message: "",
   check: false,
@@ -25,15 +24,14 @@ const schema = yup.object().shape(
     name: yup.string().min(2).max(100).required(),
     phone: yup
       .string()
-      .nullable()
       .notRequired()
       .when("phone", {
-        is: (value: string) => value?.length,
+        is: (value: string | undefined) => value?.length,
         then: (rule) => rule.matches(phoneRegExp, "Phone number is not valid"),
       }),
     email: yup.string().min(3).max(50).email().required(),
     message: yup.string().min(3).max(200).required(),
-    check: yup.boolean().oneOf([true]).required(),
+    check: yup.boolean().oneOf([true]).defined(),
     subject: yup.string().required(),
     from_name: yup.string().required(),
   },
@@ -54,7 +52,7 @@ export const Form = (props: FormProps) => {
     watch,
     setValue,
     formState: { dirtyFields, errors, isSubmitted, isValid },
-  } = useForm<FormValueTypes>({ defaultValues, mode: "onChange", resolver: yupResolver(schema) });
+  } = useForm<FormValueTypes>({ defaultValues, mode: "onChange", resolver: yupResolver(schema) as Resolver<FormValueTypes> });
 
   const watchName = watch("name", "Someone");
 
@@ -152,7 +150,7 @@ export const Form = (props: FormProps) => {
         <div className="form-check">
           <label className="form-check-label" htmlFor="check">
             I have read and agree to the{" "}
-            <Link className="yellowLink" to="/terms-and-conditions">
+            <Link className="text-link" to="/terms-and-conditions">
               Terms and Conditions
             </Link>{" "}
             <span className={styles.isRequired}>*</span>

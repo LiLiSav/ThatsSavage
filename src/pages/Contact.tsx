@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { SubmitHandler } from "react-hook-form";
-import styles from "components/Contact/Form.module.scss";
 import { Form } from "components/Contact";
 import { FormSubmission, FormValueTypes } from "types/form";
 
@@ -40,16 +39,18 @@ export default function Contact() {
   };
 
   return (
-    <div className={`${styles.cardContainer} container card shadow p-4 p-md-5 mb-md-3 mt-md-3`}>
-      <h1 className="title text-warning fw-bold">Contact Us</h1>
-      <hr />
-      <p className="pb-3 fw-bold">
-        Got a question? Want a quote? Got some feedback? Don&apos;t hesitate to get in contact and
-        we will be happy to help.
-      </p>
-      <div>
-        <Form loading={loading} submitForm={submitForm} formIsSent={formIsSent} />
+    <section className="bg-gray shadow pb-md-3 pt-md-3">
+      <div className="container card p-5">
+        <h1 className="title yellow-dark fw-bold">Contact Us</h1>
+        <hr />
+        <p className="pb-3 fw-bold">
+          Got a question? Want a quote? Got some feedback? Don&apos;t hesitate to get in contact and
+          we will be happy to help.
+        </p>
+        <div>
+          <Form loading={loading} submitForm={submitForm} formIsSent={formIsSent} />
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

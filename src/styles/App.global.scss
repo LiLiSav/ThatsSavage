@@ -4,25 +4,21 @@
 }
 
 .headerText {
-  transform: rotate(-4deg);
-  margin: 0 2rem;
-  padding-bottom: 3rem;
+  margin: 2rem 0;
 }
 
-@media screen and (max-width: 992px) {
-  .headerText {
-    transform: rotate(-4deg);
-    margin: 1rem;
-    padding-bottom: 1rem;
-  }
-}
-
-.yellowLink {
-  color: rgb(255, 193, 7);
-  font-weight: bold;
-  text-decoration: none;
+.text-link {
+  color: #008cff;
+  text-decoration: underline;
   &:hover {
-    color: rgb(238, 181, 10);
-    text-decoration: underline;
+    color: #4800ff;
   }
+}
+
+.yellow-dark {
+  color: #ff9900;
+}
+
+.bg-gray {
+  background-color: #a7a9ac;
 }

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.scss";
 
 interface NavItemProps {
@@ -10,10 +10,15 @@ interface NavItemProps {
 }
 
 export const NavItem = ({ closeMobileMenu, item }: NavItemProps) => {
+  const isActive = useLocation().pathname === item.link;
   return (
-    <li className={styles.navItem}>
-      <Link to={item.link} className={styles.navLinks} onClick={closeMobileMenu}>
-        <span className={styles.NoTextBreak}>{item.name}</span>
+    <li>
+      <Link
+        to={item.link}
+        className={isActive ? styles.navLinksActive : styles.navLinks}
+        onClick={closeMobileMenu}
+      >
+        {item.name}
       </Link>
     </li>
   );

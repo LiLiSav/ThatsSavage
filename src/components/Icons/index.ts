@@ -7,3 +7,4 @@ export { LinkedInIcon } from "./LinkedIn";
 export { InstagramIcon } from "./Instagram";
 export { FacebookIcon } from "./Facebook";
 export { TelephoneIcon } from "./Telephone";
+export { WhatsappIcon } from "./Whatsapp";
