@@ -26,10 +26,16 @@
   }
 }
 
+.parallaxWrapper {
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+
 .cardFig {
   padding: 10px;
   position: relative;
   color: inherit;
+  overflow: hidden; // Add this to contain the parallax effect
   &::after {
     content: attr(data-category);
     position: absolute;
@@ -43,8 +49,10 @@
     background-color: inherit;
     box-sizing: border-box;
     border-radius: 0.25rem;
+    z-index: 1; // Ensure label stays on top
   }
 }
+
 .cardPic {
   display: block;
   max-width: 100%;

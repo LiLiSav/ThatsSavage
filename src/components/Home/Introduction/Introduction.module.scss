@@ -69,7 +69,7 @@
 
 .introPicText {
   margin-bottom: -0.5rem;
-  height: 2.2rem;
+  height: 2.8rem;
   vertical-align: middle;
   display: inline-block;
 }
@@ -77,9 +77,5 @@
 @media screen and (max-width: 960px) {
   .introHeading {
     font-size: 1.4rem;
-  }
-
-  .introPicText {
-    max-width: 200px;
   }
 }

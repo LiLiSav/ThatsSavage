@@ -9,8 +9,8 @@ export const PreviousJobs = () => {
       <h2 className="headerText">What We Can Do</h2>
 
       <div className={`row g-2 mx-auto ${styles.cardsContainer}`}>
-        {cards.map((item) => (
-          <Job key={item.label} front={item.img} label={item.label} />
+        {cards.map((item, index) => (
+          <Job key={item.label} isEven={index % 2 === 0} front={item.img} label={item.label} />
         ))}
         <div className="col-12 col-lg-4" role="button" tabIndex={0}>
           <Link to="/prints" className={styles.viewMoreCard}>

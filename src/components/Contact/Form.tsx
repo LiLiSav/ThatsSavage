@@ -52,7 +52,11 @@ export const Form = (props: FormProps) => {
     watch,
     setValue,
     formState: { dirtyFields, errors, isSubmitted, isValid },
-  } = useForm<FormValueTypes>({ defaultValues, mode: "onChange", resolver: yupResolver(schema) as Resolver<FormValueTypes> });
+  } = useForm<FormValueTypes>({
+    defaultValues,
+    mode: "onChange",
+    resolver: yupResolver(schema) as Resolver<FormValueTypes>,
+  });
 
   const watchName = watch("name", "Someone");
 
@@ -82,7 +86,7 @@ export const Form = (props: FormProps) => {
       <input type="hidden" {...register("from_name")}></input>
       <input type="hidden" {...register("subject")} />
       {/* NAME */}
-      <div className="col-md-6">
+      <div className="col-12">
         <label htmlFor="name" className="form-label fw-bold">
           Name <span className={styles.isRequired}>*</span>
         </label>
@@ -98,7 +102,7 @@ export const Form = (props: FormProps) => {
       </div>
 
       {/* PHONE NUMBER */}
-      <div className="col-md-6">
+      <div className="col-12">
         <label htmlFor="phone" className="form-label fw-bold">
           Phone Number
         </label>
